@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { Button, Col, Form, Row, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import ReactSelect from "react-select";
+import Select from "react-select";
 import { Note, Tag } from "../App";
 import EditTagsModal from "./EditTagsModal";
 import NoteCard from "./NoteCard";
@@ -71,7 +71,7 @@ const NoteList = ({
           <Col>
             <Form.Group controlId="tags">
               <Form.Label>Tags</Form.Label>
-              <ReactSelect
+              <Select
                 options={availableTags.map((tag) => {
                   return { label: tag.label, value: tag.id };
                 })}

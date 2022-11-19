@@ -1,9 +1,9 @@
 import React, { FormEvent, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Form, Stack, Row, Col, Button } from "react-bootstrap";
-import CreateableReactSelect from "react-select/creatable";
+import Creatable from "react-select/creatable";
 import { NoteData, Tag } from "../App";
-import { v4 as uuidV4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 
 type NoteFormProps = {
@@ -49,9 +49,9 @@ const NoteForm = ({
           <Col>
             <Form.Group controlId="tags">
               <Form.Label>Tags</Form.Label>
-              <CreateableReactSelect
+              <Creatable
                 onCreateOption={(label) => {
-                  const newTag = { id: uuidV4(), label };
+                  const newTag = { id: uuidv4(), label };
                   onAddTag(newTag);
                   setSelectedTags((prev) => [...prev, newTag]);
                 }}
